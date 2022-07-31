@@ -1,0 +1,24 @@
+
+<h2>Guess The Number Game</h2>
+
+See if you can guess the number between 1 and 100 (inclusive).
+
+<div *ngIf="(gameService.state$ | async)?.hasGuess()">
+    Last Guess: {{ (gameService.state$ | async)?.lastGuess() }}<br/>
+    Status: {{ (gameService.state$ | async)?.statusDisplay() }}<br/>
+</div>
+
+<div>
+    <form>
+        <label>Guess the number:</label><br/>
+        <input type="text" #guessValue/><br/>
+        <p>
+            <input type="submit" value="Guess" (click)="onGuess($event, guessValue.value)"/>
+        </p>
+    </form>
+</div>
+
+
+<div>
+    <button (click)="newGame()">New Game</button>
+</div>
