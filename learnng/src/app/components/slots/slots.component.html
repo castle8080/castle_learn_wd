@@ -1,0 +1,19 @@
+<p>
+    I want to see how different methods of creating components where content can be passed in work.
+</p>
+<p>
+    1 way is to use content projection. See:<br/>
+    <a href='https://angular.io/guide/content-projection'>https://angular.io/guide/content-projection</a>
+</p>
+
+<app-infocard title="Jimi Hendrix">
+    <ng-container summary>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Jimi_Hendrix_1967.png">
+    </ng-container>
+    <ng-container detail>
+        Here are some albums by Jimi:<br/>
+        <ul *ngFor="let album of ['Are You Experienced', 'Axis: Bold as Love', 'Electric Ladyland']">
+            <li>{{ album }}</li>
+        </ul>
+    </ng-container>
+</app-infocard>

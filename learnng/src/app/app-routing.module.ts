@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { GuessnumComponent } from './components/guessnum/guessnum.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { SlotsComponent } from './components/slots/slots.component';
 
 const routes: Routes = [
   { path: 'guessnum', component: GuessnumComponent },
   { path: 'welcome', component: WelcomeComponent },
+  { path: 'slots', component: SlotsComponent },
   { path: '',   redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', component: WelcomeComponent },
 ];
