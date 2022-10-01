@@ -6,6 +6,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SlotsComponent } from './components/slots/slots.component';
 import { CombineObservablesComponent } from './components/combine-observables/combine-observables.component';
 import { HandleExceptionsComponent } from './components/handle-exceptions/handle-exceptions.component';
+import { FptsComponent } from './components/fpts/fpts.component';
+import { ImgHookComponent } from './components/img-hook/img-hook.component';
 
 const routes: Routes = [
   { path: 'guessnum', component: GuessnumComponent },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'slots', component: SlotsComponent },
   { path: 'combine_observables', component: CombineObservablesComponent },
   { path: 'handle_exceptions', component: HandleExceptionsComponent },
+  { path: 'fpts', component: FptsComponent },
+  { path: 'imghook', component: ImgHookComponent },
   { path: '',   redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', component: WelcomeComponent },
 ];

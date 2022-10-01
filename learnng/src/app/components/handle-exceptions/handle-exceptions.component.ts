@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { async } from '@angular/core/testing';
-import { BehaviorSubject, Observable, pipe, mergeMap, switchMap, interval, map, onErrorResumeNext, config } from 'rxjs';
+import { Component, OnInit, ErrorHandler } from '@angular/core';
+import { BehaviorSubject, Observable, pipe, mergeMap, switchMap, interval, map, onErrorResumeNext, config, catchError } from 'rxjs';
 
 // helper to run function after period and give a promise.
 function later<T> (f: () => T, delay: number): Promise<T> {
@@ -25,11 +24,12 @@ export class HandleExceptionsComponent {
 
   templateId$ = interval(1000).pipe(map(i => i + 1));
 
-  constructor() {
+  constructor(private errorHandler: ErrorHandler) {
       //this.setupCase1();
       //this.setupCase2();
       //this.setupCase3();
-      this.setupCase4();
+      //this.setupCase4();
+      this.setupCase5();
   }
 
   setupCase1() {    
@@ -94,7 +94,7 @@ export class HandleExceptionsComponent {
         let r = await later(() => {
           console.log(`[case 4] tid: ${tid}`);
           if ((tid % 3) == 0) {
-            throw new Error(`[case 3] tid: ${tid}`);
+            throw new Error(`[case 4] tid: ${tid}`);
           }
           return 42;
         }, 1000);
@@ -102,5 +102,30 @@ export class HandleExceptionsComponent {
         return;
       });
   }
+
+  setupCase5() {
+    function processTid(tid: number) {
+      return later(() => {
+        if ((tid % 3) == 0) {
+          throw new Error(`[case 5] tid: ${tid}`);
+        }
+        return tid;
+      }, 10);
+    }
+
+    this.templateId$.pipe(
+      switchMap(processTid),
+      catchError((e, obs) => {
+        // Forward the error off to the angular error handler.
+        this.errorHandler.handleError(e);
+
+        // We can return the observable, but it seems to restart.
+        return obs;
+      })
+    ).subscribe(tid => {
+        console.log(`[case 5] tid: ${tid}`);
+    });
+  }
+
 }
 

@@ -9,6 +9,8 @@ import { SlotsComponent } from './components/slots/slots.component';
 import { InfocardComponent } from './components/slots/infocard/infocard.component';
 import { CombineObservablesComponent } from './components/combine-observables/combine-observables.component';
 import { HandleExceptionsComponent } from './components/handle-exceptions/handle-exceptions.component';
+import { FptsComponent } from './components/fpts/fpts.component';
+import { ImgHookComponent } from './components/img-hook/img-hook.component';
 
 class MyErrorHandler implements ErrorHandler {
   handleError(error: any) {
@@ -24,7 +26,9 @@ class MyErrorHandler implements ErrorHandler {
     SlotsComponent,
     InfocardComponent,
     CombineObservablesComponent,
-    HandleExceptionsComponent
+    HandleExceptionsComponent,
+    FptsComponent,
+    ImgHookComponent
   ],
   imports: [
     BrowserModule,
