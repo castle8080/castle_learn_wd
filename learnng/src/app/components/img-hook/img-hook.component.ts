@@ -31,7 +31,6 @@ export class ImgHookComponent implements OnInit {
         img.src = imgURL;
       }
       else {
-        
         let imgResp = await fetch(imgSrcUri);
         let imgBlob = await imgResp.blob();
 
