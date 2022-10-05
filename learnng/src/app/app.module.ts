@@ -11,6 +11,8 @@ import { CombineObservablesComponent } from './components/combine-observables/co
 import { HandleExceptionsComponent } from './components/handle-exceptions/handle-exceptions.component';
 import { FptsComponent } from './components/fpts/fpts.component';
 import { ImgHookComponent } from './components/img-hook/img-hook.component';
+import { ForceclassComponent } from './components/forceclass/forceclass.component';
+import { MoreObservablesComponent } from './components/more-observables/more-observables.component';
 
 class MyErrorHandler implements ErrorHandler {
   handleError(error: any) {
@@ -28,7 +30,9 @@ class MyErrorHandler implements ErrorHandler {
     CombineObservablesComponent,
     HandleExceptionsComponent,
     FptsComponent,
-    ImgHookComponent
+    ImgHookComponent,
+    ForceclassComponent,
+    MoreObservablesComponent
   ],
   imports: [
     BrowserModule,
