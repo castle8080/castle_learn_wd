@@ -1,1 +1,5 @@
-<p>more-observables works!</p>
+
+Person: [{{ (currentPerson$ | async | json) }}]
+<p>
+Name: {{ currentPersonName$ | async }}
+
