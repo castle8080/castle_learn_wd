@@ -16,6 +16,7 @@ import { ForceclassComponent } from './components/forceclass/forceclass.componen
 import { MoreObservablesComponent } from './components/more-observables/more-observables.component';
 
 import { Person, PersonService } from './services/person.service';
+import { JsonserComponent } from './components/jsonser/jsonser.component';
 
 class MyErrorHandler implements ErrorHandler {
   handleError(error: any) {
@@ -36,7 +37,8 @@ class MyErrorHandler implements ErrorHandler {
     ImgHookComponent,
     ForceclassComponent,
     MoreObservablesComponent,
-    ZonetestComponent
+    ZonetestComponent,
+    JsonserComponent
   ],
   imports: [
     BrowserModule,

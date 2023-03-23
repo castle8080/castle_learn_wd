@@ -11,6 +11,7 @@ import { ImgHookComponent } from './components/img-hook/img-hook.component';
 import { ForceclassComponent } from './components/forceclass/forceclass.component';
 import { MoreObservablesComponent } from './components/more-observables/more-observables.component';
 import { ZonetestComponent } from './components/zonetest/zonetest.component';
+import { JsonserComponent } from './components/jsonser/jsonser.component';
 
 const routes: Routes = [
   { path: 'guessnum', component: GuessnumComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'forceclass', component: ForceclassComponent },
   { path: 'more_observables', component: MoreObservablesComponent },
   { path: 'zonetest', component: ZonetestComponent },
+  { path: 'jsonser', component: JsonserComponent },
   { path: '',   redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', component: WelcomeComponent },
 ];
